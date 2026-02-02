@@ -17,7 +17,7 @@ Por favor, escribe en impersonal las respuestas.
 
 ## 1. ¿Cuáles son las cuatro características básicas de la programación orientada a objetos? Describe brevemente cada una
 ### Respuesta
-Las cuatro características fundamentales de la programación orientada a objetos son *abstracción*, *encapsulación*, *herencia* y *polimorfismo*. La *abstracción* consiste en representar conceptos complejos del mundo real mediante modelos simplificados que recogen únicamente la información relevante para el problema. Esto permite trabajar con objetos sin conocer en detalle cómo están implementados internamente.
+Las cuatro características fundamentales de la programación orientada a objetos son *abstracción*, *encapsulación*, *herencia* y *polimorfismo*. La *abstracción* consiste en representar conceptos complejos del mundo real mediante modelos simplificados que recogen únicamente la información relevante para el problema. Esto permite trabajar con objetos sin conocer en detalle cómo están implementados internamente, fscilita la modificacion.
 
 La *encapsulación* agrupa datos y comportamiento dentro de una clase y limita el acceso a información interna mediante niveles de visibilidad. De esta forma, se protege la consistencia del estado interno del objeto y se reduce el acoplamiento con el código externo.
 
@@ -39,6 +39,8 @@ La *programación estructurada* organiza el código en estructuras de control bi
 
 La *programación modular* amplía este enfoque dividiendo el programa en módulos independientes, cada uno con responsabilidades claramente definidas. En C, esto se refleja mediante archivos de cabecera y archivos de implementación. Esta organización permite mantener, extender y probar partes del sistema sin afectar al resto, aumentando la reutilización y reduciendo errores.
 
+---
+Ensamblador (secuendia instrucciones de y saltos arbitarios)->Estructurada (secuendical, bifurcacion(if, swich),iteracion (while for), quita salto arbitario-> Modular:"libera",paquete, interfaz
 ---
 
 ## 4. ¿Qué tres elementos definen a un objeto en programación orientada a objetos?
