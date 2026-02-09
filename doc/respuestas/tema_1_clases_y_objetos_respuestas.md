@@ -65,6 +65,13 @@ La ubicación en memoria depende del lenguaje. En Java, los objetos se crean nor
 
 No todos los lenguajes manejan la memoria igual. La *recolección de basura* es un sistema automático que libera memoria que ya no está en uso, presente en lenguajes como Java o C#. En C y C++, esta tarea recae en el programador, lo que aporta más control pero también más riesgo de errores si no se maneja correctamente.
 
+
+Se almacenan en el Heap, 
+Ventajas: Resumo dinamicamente, el tamaño se decide en ejecución.
+          Lo q esta en el heap, vive mas alla q ek método o función donde se ha creado.
+Desventajas: Hay qur liberar cuando ya no se resista --> Manual- dificil de hacer
+                                                         Automática
+
 ---
 
 ## 7. ¿Qué es un método? ¿Qué es la sobrecarga de métodos?
@@ -108,6 +115,11 @@ La palabra clave *static* indica que un método o atributo pertenece a la clase 
 
 La combinación *static final* suele emplearse para definir constantes cuyo valor no debe modificarse. El modificador *final* garantiza que el valor asignado no cambie, y al combinarlo con *static* se consigue que la constante sea única y accesible desde cualquier parte sin necesidad de instanciar la clase.
 
+static:
+-dice q el atributo o metodo pertenece a la clase, NO A UNA CONSTANTE
+-No existe thio.
+-No puedo usar dede un método static nada q no sea static.
+-No abusar!!!!!!!!!!!!!!!!!!!!
 ---
 
 ## 10. Intenta ejecutar un poco de Java de forma básica… ¿Cómo podemos compilar y ejecutar el programa desde línea de comandos? ¿Java es compilado? ¿Qué es la máquina virtual? ¿Qué es el byte-code y los ficheros .class?
@@ -122,6 +134,13 @@ La *máquina virtual* actúa como intermediaria entre el programa y el sistema r
 
 ## 11. En el código anterior de la clase Punto: ¿Qué es new? ¿Qué es un constructor? Ejemplo de constructor en una clase Empleado
 ### Respuesta
+
+NEW
+1) Reserva memoria
+2) Invoca constructor
+3) Es una expresión
+
+
 La palabra clave `new` sirve para crear una nueva instancia de una clase en el heap. Al ejecutar `new`, la JVM reserva memoria para el objeto y devuelve una referencia al mismo. Durante este proceso, se invoca automáticamente un *constructor*, que es un método especial encargado de inicializar el estado del objeto recién creado.
 
 Un constructor tiene el mismo nombre que la clase y no especifica tipo de retorno. Puede recibir parámetros para inicializar los atributos del objeto de forma personalizada. Si no se declara ningún constructor, Java genera uno por defecto sin argumentos. A continuación se muestra un ejemplo:
@@ -138,8 +157,18 @@ class Empleado {
         this.apellidos = apellidos;
     }
 }
+´´´
+
+
 ## 12. ¿Qué es la referencia this? ¿Se llama igual en todos los lenguajes? Pon un ejemplo del uso de this en la clase Punto
 ### Respuesta
+
+THIS
+1) Referencia al objecto actual
+2) Sirve para aclarar
+3) No esta disponible en metidos static
+4) En otros lenguajes puede tener otro nombre (self en Python)
+
 La referencia *this* se utiliza dentro de los métodos y constructores para señalar al objeto actual. Cuando un atributo y un parámetro comparten el mismo nombre, *this* permite diferenciar entre ambos, evitando ambigüedades durante la asignación. También se emplea para acceder de forma explícita a métodos de la propia instancia.
 
 Aunque el concepto existe en casi todos los lenguajes orientados a objetos, no siempre se llama igual. En C++ aparece como `this` pero es un puntero, mientras que en Python se utiliza el parámetro `self`, que debe escribirse de forma explícita en los métodos. En C#, igual que en Java, se mantiene el término `this`.
@@ -173,10 +202,15 @@ class Punto {
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
+´´´
 
 
 ## 14. El paso del Punto como parámetro a un método, ¿es por copia o por referencia?, ¿afectan los cambios al objeto fuera del método?, ¿qué ocurre con un entero?
 ### Respuesta
+
+Primitivos--> por valor
+Objetos --> por referencia
+
 Java emplea siempre paso *por valor* para cualquier parámetro. En el caso de los objetos, lo que se pasa por valor es la referencia, no el objeto en sí. Esto implica que tanto el método como el código llamador comparten acceso al mismo objeto en memoria. Por ello, si dentro del método se modifican los atributos del objeto pasado como parámetro, estos cambios serán visibles fuera del método.
 
 Cuando se pasan tipos primitivos como un *int*, el valor copiado es el dato literal. Al intentar modificar ese valor dentro del método, la variable original que está fuera no se ve afectada. De esta forma, los cambios realizados sobre parámetros primitivos quedan completamente aislados dentro del ámbito local del método.
