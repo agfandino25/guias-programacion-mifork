@@ -147,7 +147,7 @@ Composición fuerte: `Linea` **crea internamente** sus `Punto` y no permite sust
 
 -- CODIGO (Java) --
 final class LineaFuerte {
-    private final Punto a;
+    private final Punto a; 
     private final Punto b;
 
     LineaFuerte(double x1, double y1, double x2, double y2) {
