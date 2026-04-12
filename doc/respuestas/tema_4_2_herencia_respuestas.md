@@ -11,7 +11,7 @@ La primera implicación es la **compatibilidad de tipos**, que permite trabajar 
 ```java
 class Soldado {
     private String nombre;
-
+  
     public Soldado(String nombre) {
         this.nombre = nombre;
     }
